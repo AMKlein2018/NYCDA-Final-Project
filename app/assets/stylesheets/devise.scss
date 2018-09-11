@@ -1,0 +1,88 @@
+@import "variables";
+
+
+.form-group {
+
+	color: white;
+	width: 800px;
+}
+
+.form-group1 {
+
+	color: white;
+	margin-top: 100px;
+	position: relative;
+	right: 200px;
+	width: 700px;
+
+}
+
+
+.form-group2 {
+
+	color: white;
+	margin-top: 15px;
+	position: relative;
+	// right: 100px;
+	width: 500px;
+
+}
+
+.sessionsheader, .new_user, .sessionsedit {
+	width: 100%;
+}
+
+.links {
+	margin-top:10px;
+	text-align:left;
+	width:100%;
+}
+
+.sessionsheader h2, .sessionsedit h2 {
+
+	display:block;
+	width: 100%;
+	color: white;
+	text-align: center;
+
+}
+
+.links a {
+
+	margin-left: 20px;
+	color: red;
+
+
+}
+
+.cancel {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 200px;
+	right: 15%;
+	border: 3px solid $red;
+	width: 300px;
+	text-align: center;
+	padding: 0 10px 15px;
+	color: #aaa;
+
+}
+
+.cancel form {
+	color: $dkblue;
+}
+
+.cancel h3 {
+
+	color: red;
+}
+
+
+.cancel a {
+	display: none;
+}
+
+
+
+
+

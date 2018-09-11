@@ -1,0 +1,15 @@
+<h1>Reccomendations for You</h1>
+
+<% @upcoming_comics.each do |ch_obj| %>
+	<% if ch_obj["titles"].length > 0 %>
+	<div class="textboxes calentry">
+	<div class = "charname calhead"><%= ch_obj["heading"] %></div>
+	<% ch_obj["titles"].each do |title| %>
+	<div class="calholder">
+		<div class="callist" style="width:60%;"><b><%= title[0] %></b></div>
+		<div class="callist" style="width:40%;">out on <%= Date.parse(title[1]).strftime("%B %-d") %></div>
+	</div>
+	<% end %>
+	</div>
+	<% end %>
+<% end %>

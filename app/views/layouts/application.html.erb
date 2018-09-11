@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ComicsForum</title>
+    <title>Marvel Pull List Builder</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Fjalla+One|Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
+    <header>
+
+
+      
+
+
+       
+
+        <%=image_tag("marvelogo.png")%>
+
+        <h1>Pull List Builder</h1>
+
+    </header>
+
 <nav>
     <% if !user_signed_in? %>
-    <%=link_to "home", root_path %> •
-    <%= link_to "sign in", new_user_session_path %> •
+    <%= link_to "sign in", new_user_session_path %>
     <%=link_to "sign up", new_user_registration_path %>
   <% end %>
 
   <% if user_signed_in? %>
-    <%=link_to "Home", root_path %> •
-    <a href= " /users/edit"> Edit User Info. </a> •
-    <a href= "/favorites/index">Favorites Show Page </a> •
+    <%=link_to "Home", root_path %>
+    <!-- <a href="/users/<%= current_user.id %>">User Profile</a>  -->
+    <a href= " /users/edit"> Edit User Info </a>
+    <a href= "/favorites/index">Your Favorite Heroes</a>
     <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>
-    
+
     <%= form_tag(search_path) do %>
-        <%= text_field_tag :input %>
-        <%= submit_tag "search" %>
+        <%= text_field_tag :input, nil, :placeholder => "search" %>
+        <%= submit_tag "Find New Heroes" %>
     <% end %>
-  
+
   <% end %>
 
  </nav>
 
+  <div id="back-gradient"></div>
+
+  <div id="bodycontainer">
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+     </div>
+
+
+
 
   </body>
 </html>

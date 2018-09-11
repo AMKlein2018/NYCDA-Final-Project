@@ -1,6 +1,16 @@
-<h1>Favorites#index</h1>
-<strong>KA-POW</strong>
+<h1>My Favorite Super Hero Characters </h1>
 
-<% @favorites.each do |f| %>
-    <%= f.title %>
-    <% end %>
+
+      <% @favorites.each_with_index do |favorite, index| %>
+
+    <a href = "/favorite/<%= favorite.id %>">
+  <div style="width:175px;margin:20px;">
+          <div class="i" style="margin:0;">
+             <%= image_tag favorite["image"] %>
+          </div>
+            <div class= "name-params" style="width:100%;"><%= favorite["name"] %></div></a>
+            <div id="sub-b"><%= link_to "Delete Hero", favorites_destroy_path(:project => favorite.id), method: :delete %></div>
+
+          </div>
+
+      <% end %>

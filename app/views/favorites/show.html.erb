@@ -1,8 +1,73 @@
+	
+<div class = "characterdetails">
+	<h1>Character Details</h1>
+</div><br />
 
-<h1>Favorites List/h1>
-<p>Find me in app/views/favorites/show.html.erb</p>
+<hr>
 
-<%= @favorite.tite%>
-<%= @favorite.name%>
-<%= @favorite.image%>
-<%= @favorite.description%>
+
+<div class = "charname">SuperHero: <%= @favorite.name%> |
+		<%= link_to "Delete Hero", favorites_destroy_path(:project => @favorite.id), method: :delete %>
+</div><br />
+
+<div class = "charimage"><%= image_tag @favorite["image"], style: 'width: 578px; height: 444px' %></div><br>
+
+<!-- <div class="vl"></div> -->
+
+<div class = "charbox1"><h3><strong>Description</strong></h3>
+	<h4><%= @favorite.description%></h4>
+</div><br>
+
+	<% if @titles.length > 0 %>
+		<div class = "charbox2">
+			<h3><strong>Appears In:</strong></h3>
+			<div class ="column">
+			<% @titles.each_with_index do |c, index| %>
+			<h4><%= index + 1 %>. <%= c %></h4>
+
+			
+			<% end %>
+			</div>
+
+		</div>
+	<% end %>
+
+
+
+	<div class="upd"><%= link_to "Remove from Favorites", favorites_destroy_path(:project => @favorite.id), method: :delete %></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
